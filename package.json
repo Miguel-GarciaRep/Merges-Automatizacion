@@ -1,0 +1,11 @@
+{
+  "name": "coreshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tienda web académica de hardware con HTML, CSS y JavaScript vanilla.",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/validate.mjs",
+    "check": "npm test"
+  }
+}

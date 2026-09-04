@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Carrito y Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">  
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos" class="active">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="aside-header">
+                <h2>Carrito y Pedidos</h2>
+                <small>PANEL DE USUARIO</small>
+            </div>
+            <nav>
+                <ul id="aside-nav">
+                    <li><a href="#cart-section">Carrito</a></li>
+                    <li><a href="#orders-section" data-filter="all" class="active">Todos los pedidos</a></li>
+                    <li><a href="#orders-section" data-filter="active">Envíos activos</a></li>
+                    <li><a href="#orders-section" data-filter="completed">Completados</a></li>
+                </ul>
+            </nav>
+            <div class="aside-widget">
+                <h4>¿Cómo funciona?</h4>
+                <p class="text-muted" style="font-size:0.82rem;margin:0;">Añade productos al carrito, pulsa <strong>Comprar</strong> y completa tus datos en la nueva pestaña. Después podrás seguir el estado y los tiempos de espera de cada pedido.</p>
+            </div>
+        </aside>
+
+        <main>
+            <section id="cart-section" class="page-section">
+                <div class="page-header fade-in">
+                    <span class="badge">TU CARRITO</span>
+                    <h2>Carrito de compras</h2>
+                    <p>Revisa los artículos seleccionados antes de finalizar la compra.</p>
+                </div>
+                <div id="cart-container"></div>
+            </section>
+
+            <section id="orders-section" class="page-section">
+                <div class="page-header fade-in">
+                    <span class="badge badge-blue">TUS PEDIDOS</span>
+                    <h2>Historial y seguimiento</h2>
+                    <p>Consulta por dónde va cada pedido, el tiempo estimado y el tiempo real de espera.</p>
+                </div>
+                <div id="orders-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { CartController } from './js/controllers/CartController.js';
+        import { OrdersController } from './js/controllers/OrdersController.js';
+        if (AppController.init('pedidos')) {
+            CartController.init();
+            OrdersController.init();
+        }
+    </script>
+</body>
+</html>

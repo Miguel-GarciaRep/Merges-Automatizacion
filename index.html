@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio" class="active">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="aside-header">
+                <h2>CoreShop</h2>
+                <small>HARDWARE DE ALTO RENDIMIENTO</small>
+            </div>
+            <nav>
+                <ul id="aside-nav">
+                    <li><a href="#" data-section="hero" class="active">Resumen</a></li>
+                    <li><a href="#" data-section="stats">Estadísticas</a></li>
+                    <li><a href="#" data-section="features">Ventajas</a></li>
+                    <li><a href="#" data-section="cta">Comenzar</a></li>
+                </ul>
+            </nav>
+            <div class="aside-widget">
+                <h4>Soporte 24/7</h4>
+                <p class="text-muted" style="font-size:0.82rem;margin:0;">Nuestro equipo de ingenieros está disponible para ayudarte con cualquier consulta técnica.</p>
+            </div>
+        </aside>
+
+        <main>
+            <section id="hero" class="hero fade-in">
+                <span class="badge">ARQUITECTURA DE PRECISIÓN</span>
+                <h2>Diseñando el Futuro<br>de la Informática</h2>
+                <p>CoreShop ofrece soluciones de estaciones de trabajo de alto rendimiento para investigadores, creadores e ingenieros que exigen fiabilidad absoluta.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" id="btn-explore">Explorar productos</button>
+                    <button class="btn-outline" id="btn-specs">Ver especificaciones</button>
+                </div>
+            </section>
+
+            <section id="stats" class="stats-row">
+                <div class="stat-card fade-in" style="animation-delay:0.1s">
+                    <span class="number" data-count="1500" data-suffix="+">0</span>
+                    <span class="label">Productos vendidos</span>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay:0.2s">
+                    <span class="number" data-count="98" data-suffix="%">0</span>
+                    <span class="label">Satisfacción cliente</span>
+                </div>
+                <div class="stat-card fade-in" style="animation-delay:0.3s">
+                    <span class="number" data-count="12" data-suffix="">0</span>
+                    <span class="label">Años de experiencia</span>
+                </div>
+            </section>
+
+            <section id="features">
+                <span class="badge badge-blue">POR QUÉ CORESHOP</span>
+                <h2 style="margin:0.75rem 0 0;font-size:1.8rem;">Ventajas que nos definen</h2>
+                <div class="feature-grid">
+                    <article class="feature-card fade-in" style="animation-delay:0.1s">
+                        <div class="icon">⚡</div>
+                        <h3>Rendimiento extremo</h3>
+                        <p>Componentes de última generación seleccionados y probados bajo cargas reales de trabajo.</p>
+                    </article>
+                    <article class="feature-card fade-in" style="animation-delay:0.2s">
+                        <div class="icon">🔧</div>
+                        <h3>Ensamblaje experto</h3>
+                        <p>Cada equipo pasa por un riguroso control de calidad con gestión de cables profesional.</p>
+                    </article>
+                    <article class="feature-card fade-in" style="animation-delay:0.3s">
+                        <div class="icon">🛡️</div>
+                        <h3>Garantía extendida</h3>
+                        <p>3 años de garantía en todos los productos con soporte técnico prioritario incluido.</p>
+                    </article>
+                    <article class="feature-card fade-in" style="animation-delay:0.4s">
+                        <div class="icon">🚀</div>
+                        <h3>Envío express</h3>
+                        <p>Entrega en 24-48h para pedidos nacionales con seguimiento en tiempo real.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="cta" class="cta-banner fade-in">
+                <h3>¿Listo para potenciar tu setup?</h3>
+                <p>Explora nuestro catálogo de hardware premium o reserva un servicio de ensamblaje personalizado.</p>
+                <a href="productos.html" class="btn-primary">Ver catálogo</a>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { HomeController } from './js/controllers/HomeController.js';
+        AppController.init('inicio');
+        HomeController.init();
+    </script>
+</body>
+</html>

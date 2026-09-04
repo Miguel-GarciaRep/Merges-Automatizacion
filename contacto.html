@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto" class="active">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="aside-header">
+                <h2>Comunicaciones</h2>
+                <small>PONTE EN CONTACTO</small>
+            </div>
+            <nav>
+                <ul id="aside-nav">
+                    <li><a href="#" data-topic="Soporte Técnico" class="active">Soporte Técnico</a></li>
+                    <li><a href="#" data-topic="Ventas">Departamento de Ventas</a></li>
+                    <li><a href="#" data-topic="Corporativo">Consultas Corporativas</a></li>
+                    <li><a href="#" data-topic="Ubicaciones">Ubicaciones de Tiendas</a></li>
+                </ul>
+            </nav>
+            <div class="aside-widget">
+                <h4>Mensajes recientes</h4>
+                <div id="messages-list"></div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="page-header fade-in">
+                <span class="badge">CONTACTO</span>
+                <h2 id="contact-title">Soporte Técnico</h2>
+                <p id="contact-desc">Abre un ticket con nuestro equipo de ingeniería para la resolución de problemas de hardware.</p>
+            </div>
+
+            <div class="form-card fade-in">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required minlength="2" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Modelo de hardware / Asunto</label>
+                        <input type="text" id="subject" name="subject" required minlength="3" placeholder="Ej: RTX 4090 - Problema de temperatura">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Descripción del problema</label>
+                        <textarea id="message" name="message" rows="6" required minlength="10" placeholder="Describe tu consulta con el mayor detalle posible..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="align-self:flex-start;">Enviar ticket</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { ContactController } from './js/controllers/ContactController.js';
+        if (AppController.init('contacto')) {
+            ContactController.init();
+        }
+    </script>
+</body>
+</html>

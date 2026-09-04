@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Servicios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios" class="active">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="aside-header">
+                <h2>Centro Técnico</h2>
+                <small>SOPORTE Y MANTENIMIENTO</small>
+            </div>
+            <nav>
+                <ul id="aside-nav">
+                    <li><a href="#" data-category="" class="active">Todos los servicios</a></li>
+                    <li><a href="#" data-category="Ensamblaje">Ensamblaje Personalizado</a></li>
+                    <li><a href="#" data-category="Overclocking">Overclocking</a></li>
+                    <li><a href="#" data-category="Refrigeración">Refrigeración Líquida</a></li>
+                    <li><a href="#" data-category="Diagnóstico">Diagnóstico de Hardware</a></li>
+                </ul>
+            </nav>
+            <div class="aside-widget">
+                <h4>Garantía de servicio</h4>
+                <p class="text-muted" style="font-size:0.82rem;margin:0;">Todos nuestros servicios incluyen 30 días de soporte post-instalación sin coste adicional.</p>
+            </div>
+        </aside>
+
+        <main>
+            <div class="page-header fade-in">
+                <span class="badge badge-orange">SERVICIOS PROFESIONALES</span>
+                <h2>Soluciones de Computación</h2>
+                <p>Manipulación experta de hardware y optimización de sistemas para máximo rendimiento.</p>
+            </div>
+
+            <section class="grid-layout" id="services-container"></section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { ServicesController } from './js/controllers/ServicesController.js';
+        if (AppController.init('servicios')) {
+            ServicesController.init();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Finalizar compra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <main class="checkout-page">
+            <div class="page-header fade-in">
+                <span class="badge badge-blue">CHECKOUT</span>
+                <h2>Finalizar compra</h2>
+                <p>Completa tus datos de envío, elige un método de pago y confirma el pedido.</p>
+            </div>
+
+            <div class="checkout-grid fade-in">
+                <div class="form-card" id="checkout-summary"></div>
+
+                <div class="form-card">
+                    <h3 style="margin-top:0;">Datos de envío</h3>
+                    <form id="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Nombre completo</label>
+                                <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="Nombre y apellidos">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" required minlength="9" placeholder="+34 600 000 000">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">País</label>
+                                <input type="text" id="country" name="country" required placeholder="España">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Dirección</label>
+                            <input type="text" id="street" name="street" required minlength="5" placeholder="Calle, número, piso, puerta">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" name="city" required placeholder="Madrid">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">Provincia / Estado</label>
+                                <input type="text" id="state" name="state" required placeholder="Madrid">
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Código postal</label>
+                                <input type="text" id="zip" name="zip" required minlength="4" placeholder="28001">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notas de entrega (opcional)</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Horario preferido, instrucciones para el repartidor..."></textarea>
+                        </div>
+
+                        <div class="payment-section">
+                            <h3>Método de pago</h3>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="card" checked>
+                                    <span class="payment-option-content">
+                                        <span class="payment-icon">💳</span>
+                                        <span>Tarjeta</span>
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="paypal">
+                                    <span class="payment-option-content">
+                                        <span class="payment-icon">🅿️</span>
+                                        <span>PayPal</span>
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="bizum">
+                                    <span class="payment-option-content">
+                                        <span class="payment-icon">📱</span>
+                                        <span>Bizum</span>
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="transfer">
+                                    <span class="payment-option-content">
+                                        <span class="payment-icon">🏦</span>
+                                        <span>Transferencia</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div id="payment-panels">
+                                <div class="payment-panel" data-panel="card">
+                                    <div class="form-group">
+                                        <label for="cardNumber">Número de tarjeta</label>
+                                        <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="cc-number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardName">Titular de la tarjeta</label>
+                                        <input type="text" id="cardName" name="cardName" placeholder="Como aparece en la tarjeta" autocomplete="cc-name">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardExpiry">Caducidad</label>
+                                            <input type="text" id="cardExpiry" name="cardExpiry" maxlength="5" placeholder="MM/AA" autocomplete="cc-exp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardCvv">CVV</label>
+                                            <input type="text" id="cardCvv" name="cardCvv" inputmode="numeric" maxlength="4" placeholder="123" autocomplete="cc-csc">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="payment-panel hidden" data-panel="paypal">
+                                    <p class="payment-info">Serás redirigido a PayPal para completar el pago de forma segura. El cargo se realizará al confirmar el pedido.</p>
+                                    <div class="form-group">
+                                        <label for="paypalEmail">Correo de PayPal</label>
+                                        <input type="email" id="paypalEmail" name="paypalEmail" placeholder="tu@paypal.com">
+                                    </div>
+                                </div>
+
+                                <div class="payment-panel hidden" data-panel="bizum">
+                                    <p class="payment-info">Recibirás una notificación en tu app de Bizum para autorizar el pago al confirmar el pedido.</p>
+                                    <div class="form-group">
+                                        <label for="bizumPhone">Teléfono asociado a Bizum</label>
+                                        <input type="tel" id="bizumPhone" name="bizumPhone" placeholder="+34 600 000 000">
+                                    </div>
+                                </div>
+
+                                <div class="payment-panel hidden" data-panel="transfer">
+                                    <p class="payment-info">Realiza la transferencia a la siguiente cuenta. El pedido se procesará cuando confirmemos el pago (1-2 días hábiles).</p>
+                                    <div class="bank-details">
+                                        <p><span class="label">Titular</span> CoreShop Hardware S.L.</p>
+                                        <p><span class="label">IBAN</span> ES12 3456 7890 1234 5678 9012</p>
+                                        <p><span class="label">Concepto</span> Tu número de pedido (se mostrará al confirmar)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width:100%;">Confirmar pedido y pagar</button>
+                    </form>
+                    <div id="checkout-feedback"></div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { CheckoutController } from './js/controllers/CheckoutController.js';
+        if (AppController.init('comprar')) {
+            CheckoutController.init();
+        }
+    </script>
+</body>
+</html>

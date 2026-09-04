@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="auth-page">
+        <div class="auth-card fade-in">
+            <h2>Iniciar sesión</h2>
+            <p class="subtitle">Accede a tu cuenta de CoreShop</p>
+
+            <button class="btn-social" data-provider="google"><img width="20" height="20" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>  Continuar con Google</button>
+            <button class="btn-social" data-provider="github"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="github"/> Continuar con GitHub</button>
+            <button class="btn-social" data-provider="microsoft"><img width="20" height="20" src="https://img.icons8.com/color/48/microsoft.png" alt="microsoft"/> Continuar con Microsoft</button>
+            <button class="btn-social" data-provider="apple"><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="mac-os"/>Continuar con Apple</button>
+
+            <div class="auth-divider">o con tu correo</div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required minlength="6" placeholder="Mínimo 6 caracteres">
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;">Iniciar sesión</button>
+            </form>
+
+            <div id="auth-feedback"></div>
+
+            <p class="auth-footer">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { AuthController } from './js/controllers/AuthController.js';
+        AppController.init('');
+        AuthController.init('login');
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreShop - Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="Logo-defalt.png" type="imagen.png">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">CoreShop</a>
+        <nav>
+            <a href="index.html" data-page="inicio">Inicio</a>
+            <a href="productos.html" data-page="productos" class="active">Productos</a>
+            <a href="servicios.html" data-page="servicios">Servicios</a>
+            <a href="pedidos.html" data-page="pedidos">Pedidos</a>
+            <a href="contacto.html" data-page="contacto">Contacto</a>
+        </nav>
+        <div id="auth-section"></div>
+    </header>
+
+    <div class="layout-wrapper">
+        <aside>
+            <div class="aside-header">
+                <h2>Catálogo</h2>
+                <small>FILTRAR POR CATEGORÍA</small>
+            </div>
+            <nav>
+                <ul id="aside-nav"></ul>
+            </nav>
+            <div class="aside-widget">
+                <h4>Consejo</h4>
+                <p class="text-muted" style="font-size:0.82rem;margin:0;">Usa los filtros superiores para encontrar componentes por nombre, marca o rango de precio.</p>
+            </div>
+        </aside>
+
+        <main>
+            <div class="page-header fade-in">
+                <span class="badge">CATÁLOGO DE HARDWARE</span>
+                <h2>Componentes de Alto Nivel</h2>
+                <p>Silicio diseñado con precisión para tareas computacionales de alta carga.</p>
+            </div>
+
+            <div class="filters-bar fade-in">
+                <div class="filter-group">
+                    <label for="filter-name">Nombre</label>
+                    <input type="text" id="filter-name" placeholder="Buscar por nombre...">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-brand">Marca</label>
+                    <input type="text" id="filter-brand" placeholder="Intel, AMD, NVIDIA...">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-min">Precio mínimo ($)</label>
+                    <input type="number" id="filter-min" min="0" placeholder="0">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-max">Precio máximo ($)</label>
+                    <input type="number" id="filter-max" min="0" placeholder="2000">
+                </div>
+            </div>
+
+            <section class="grid-layout" id="product-container"></section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 <span>CoreShop</span> — Hardware de precisión para profesionales
+    </footer>
+
+    <script type="module">
+        import { AppController } from './js/controllers/AppController.js';
+        import { ProductsController } from './js/controllers/ProductsController.js';
+        if (AppController.init('productos')) {
+            ProductsController.init();
+        }
+    </script>
+</body>
+</html>
